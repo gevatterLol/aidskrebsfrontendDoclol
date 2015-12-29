@@ -45,12 +45,12 @@ aidskrebs = {
 						var videoviewer = new akvideoviewer($(".container"))
 						videoviewer.before = sharedbefore
 						videoviewer.after = sharedafter
-						videoviewer.open("images/"+item.img)
+						videoviewer.open(fuckinghardocdedURL + "images/"+item.img)
 					} else {
 						var viewer = new akviewer($(".container"))
 						viewer.before = sharedbefore
 						viewer.after = sharedafter
-						viewer.open("images/"+item.img)
+						viewer.open(fuckinghardocdedURL + "images/"+item.img)
 					}
 				}
 			})
@@ -70,6 +70,7 @@ aidskrebs = {
 				for(var i = 0; i < data.images.length; i++){
 					src = fuckinghardocdedURL + "images/"+data.images[i].thumb
 					var info = ''
+					info += '<a class="linksrc" href="'+data.images[i].source+'">Source</a>'
 					info += '<span>'+data.images[i].channel+'</span>'
 					info += '<span>'+data.images[i].user+'</span>'
 					info += '<span>'+aidsdate(data.images[i].date)+'</span>'
@@ -107,6 +108,7 @@ aidskrebs = {
 						aidskrebs.Images.push(data.images[i])
 						src = fuckinghardocdedURL + "images/"+data.images[i].thumb
 						var info = ''
+						info += '<a class="linksrc" href="'+data.images[i].source+'">Source</a>'
 						info += '<span>'+data.images[i].channel+'</span>'
 						info += '<span>'+data.images[i].user+'</span>'
 						info += '<span>'+aidsdate(data.images[i].date)+'</span>'
@@ -132,7 +134,7 @@ function clicker(elemid, i){
 			var videoviewer = new akvideoviewer($(".container"))
 			videoviewer.before = function(){
 				sharedbefore()
-				history.pushState({}, 'A I D S K R E B S', fuckinghardocdedURL + '/?img='+i.id);
+				//history.pushState({}, 'A I D S K R E B S', fuckinghardocdedURL + '/?img='+i.id);
 			}
 			videoviewer.after = sharedafter
 			videoviewer.open(fuckinghardocdedURL + "images/"+i.img)
@@ -140,10 +142,10 @@ function clicker(elemid, i){
 			var viewer = new akviewer($(".container"))
 			viewer.before = function(){
 				sharedbefore()
-				history.pushState({}, 'A I D S K R E B S', fuckinghardocdedURL + '/?img='+i.id);
+				//history.pushState({}, 'A I D S K R E B S', fuckinghardocdedURL + '/?img='+i.id);
 			}
 			viewer.after = sharedafter
-			viewer.open(fuckinghardocdedURL = "images/"+i.img)
+			viewer.open(fuckinghardocdedURL + "images/"+i.img)
 		}
 		return false
 	})
