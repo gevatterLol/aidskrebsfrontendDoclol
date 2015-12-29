@@ -1,3 +1,5 @@
+var fuckinghardocdedURL = "https://aidskrebs.net/";
+
 var pass = function(){}
 var getlast = function(coll){
 	return coll[coll.length-1]
@@ -33,7 +35,7 @@ aidskrebs = {
 			var targetid = urlObject().parameters["img"]
 			$.ajax({
 				type: 'GET',
-				url: 'https://aidskrebs.net/api/' + targetid + '/1',
+				url: fuckinghardocdedURL + '/api/' + targetid + '/1',
 				dataType: 'json',
 				timeout: 2000,
 				context: $('body'),
@@ -59,14 +61,14 @@ aidskrebs = {
 		$.ajaxSettings.crossDomain = true
 		$.ajax({
 			type: 'GET',
-			url: 'https://aidskrebs.net/api/newest/100',
+			url: fuckinghardocdedURL + '/api/newest/100',
 			dataType: 'json',
 			timeout: 2000,
 			context: $('body'),
 			success: function(data){
 				aidskrebs.Images = data.images;
 				for(var i = 0; i < data.images.length; i++){
-					src = "images/"+data.images[i].thumb
+					src = fuckinghardocdedURL + "images/"+data.images[i].thumb
 					var info = ''
 					info += '<span>'+data.images[i].channel+'</span>'
 					info += '<span>'+data.images[i].user+'</span>'
@@ -96,14 +98,14 @@ aidskrebs = {
 			$.ajaxSettings.crossDomain = true
 			$.ajax({
 				type: 'GET',
-				url: 'https://aidskrebs.net/api/' + getlast(aidskrebs.Images).id + '/20',
+				url: fuckinghardocdedURL + '/api/' + getlast(aidskrebs.Images).id + '/20',
 				dataType: 'json',
 				timeout: 2000,
 				context: $('body'),
 				success: function(data){
 					for(var i = 1; i < data.images.length; i++){
 						aidskrebs.Images.push(data.images[i])
-						src = "images/"+data.images[i].thumb
+						src = fuckinghardocdedURL + "images/"+data.images[i].thumb
 						var info = ''
 						info += '<span>'+data.images[i].channel+'</span>'
 						info += '<span>'+data.images[i].user+'</span>'
@@ -130,18 +132,18 @@ function clicker(elemid, i){
 			var videoviewer = new akvideoviewer($(".container"))
 			videoviewer.before = function(){
 				sharedbefore()
-				history.pushState({}, 'A I D S K R E B S', '/?img='+i.id);
+				history.pushState({}, 'A I D S K R E B S', fuckinghardocdedURL + '/?img='+i.id);
 			}
 			videoviewer.after = sharedafter
-			videoviewer.open("images/"+i.img)
+			videoviewer.open(fuckinghardocdedURL + "images/"+i.img)
 		} else {
 			var viewer = new akviewer($(".container"))
 			viewer.before = function(){
 				sharedbefore()
-				history.pushState({}, 'A I D S K R E B S', '/?img='+i.id);
+				history.pushState({}, 'A I D S K R E B S', fuckinghardocdedURL + '/?img='+i.id);
 			}
 			viewer.after = sharedafter
-			viewer.open("images/"+i.img)
+			viewer.open(fuckinghardocdedURL = "images/"+i.img)
 		}
 		return false
 	})
