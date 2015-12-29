@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,900);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,900);
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -15,7 +15,8 @@ body {
 }
 
 a {
-	color: #FF2A48;
+	color: #D3EEE2;
+	font-family: 'Oswald', sans-serif;
 	text-decoration: none;
 	outline: none;
 }
