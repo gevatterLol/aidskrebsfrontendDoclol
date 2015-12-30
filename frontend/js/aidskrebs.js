@@ -190,7 +190,7 @@ function aidsdate(unixtime) {
 	var month = (date.getMonth() + 1)
 	if (date.getMonth() + 1 < 10) month = '0' + month;
 	var year = date.getFullYear();
-	return year + "-" + month + "-"+ day + ' ' + hours + ':' + minutes;
+	return day + "." + month + "." + year + ' ' + hours + ':' + minutes;
 }
 
 function urlObject(options) {
