@@ -108,7 +108,7 @@ aidskrebs = {
 						aidskrebs.Images.push(data.images[i])
 						src = fuckinghardocdedURL + "images/"+data.images[i].thumb
 						var info = ''
-						info += '<a class="linksrc" href="'+data.images[i].source+'">Source</a>'
+						info += '<a class="linksrc" href="'+data.images[i].source+'"><i class="fa fa-external-link-square"></i></a>'
 						info += '<span>'+data.images[i].channel+'</span>'
 						info += '<span>'+data.images[i].user+'</span>'
 						info += '<span>'+aidsdate(data.images[i].date)+'</span>'
