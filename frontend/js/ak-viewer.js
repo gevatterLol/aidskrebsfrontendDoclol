@@ -68,12 +68,7 @@ function akvideoviewer(elem) {
 		//my.video.on('click', my.close)
 		my.view.on('click', my.close)
 
-		// ESC 
-		document.onkeyup = function(event) {
-			if(event.keyCode == 27) { 
-				my.close();		
-			}
-		};
+		registerNavigationKeys()
 	}
 }
 
@@ -127,13 +122,27 @@ function akviewer(elem) {
 		})
 		// my.image.on('click', my.close)
 		my.view.on('click', my.close)
+		registerNavigationKeys()
 
-		// ESC 
-		document.onkeyup = function(event) {
-			if(event.keyCode == 27) { 
-				my.close();		
-			}
-		};
 	}
 }
 
+function registerNavigationKeys() {
+		document.onkeyup = function(event) {
+			if(event.keyCode == 27) { 
+			// ESC 
+				my.close();		
+			}
+
+			// left
+			if(event.keyCode == 28) { // TODO
+				// easy way would be to redirect the "...?img=xy" url to xy+1 url
+				// but diirty as hell
+			}
+
+			// right
+			if(event.keycode == 29) {
+
+			}
+		};
+}
