@@ -135,13 +135,13 @@ function registerNavigationKeys() {
 			}
 
 			// left
-			if(event.keyCode == 28) { // TODO
+			if(event.keyCode == 37) {
 				// easy way would be to redirect the "...?img=xy" url to xy+1 url
 				// but diirty as hell
 			}
 
 			// right
-			if(event.keycode == 29) {
+			if(event.keycode == 39) {
 
 			}
 		};
