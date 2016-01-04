@@ -68,13 +68,8 @@ aidskrebs = {
 			success: function(data){
 				aidskrebs.Images = data.images;
 				for(var i = 0; i < data.images.length; i++){
-					src = fuckinghardocdedURL + "images/"+data.images[i].thumb
-					var info = ''
-					info += '<a class="linksrc" href="'+data.images[i].source+'"><i class="fa fa-external-link-square"></i></a>'
-					info += '<span>'+data.images[i].channel+'</span>'
-					info += '<span>'+data.images[i].user+'</span>'
-					info += '<span>'+aidsdate(data.images[i].date)+'</span>'
-					$("#grid").append('<li class="shown"><a class="imglink" id=elem'+data.images[i].id+' href="#"><img src="'+src+'"><p>'+info+'</p></a></li>');
+					var item = createImageElement(data.images[i]);
+					$("#grid").append(item);
 					clicker("#elem"+data.images[i].id,data.images[i])
 				}
 				imagesLoaded(aidskrebs.Gallery, function(){
@@ -106,13 +101,7 @@ aidskrebs = {
 				success: function(data){
 					for(var i = 1; i < data.images.length; i++){
 						aidskrebs.Images.push(data.images[i])
-						src = fuckinghardocdedURL + "images/"+data.images[i].thumb
-						var info = ''
-						info += '<a class="linksrc" href="'+data.images[i].source+'"><i class="fa fa-external-link-square"></i></a>'
-						info += '<span>'+data.images[i].channel+'</span>'
-						info += '<span>'+data.images[i].user+'</span>'
-						info += '<span>'+aidsdate(data.images[i].date)+'</span>'
-						var item = $('<li class="shown"><a class="imglink" id=elem'+data.images[i].id+' href="#"><img src="'+src+'"><p>'+info+'</p></a></li>')
+						var item = createImageElement(data.images[i]);
 						$("#grid").append(item);
 						aidskrebs.Masonry.appended(item);
 						clicker("#elem"+data.images[i].id,data.images[i]);
@@ -126,6 +115,19 @@ aidskrebs = {
 			})
 		}
 	}
+}
+
+function createImageElement(image) {
+
+	var src = "images/" + image.thumb
+	var info = ''
+	info += '<a class="linksrc" href="' + image.source + '"><i class="fa fa-external-link-square"></i></a>'
+	info += '<span>' + image.channel + '</span>'
+	info += '<span>' + image.user + '</span>'
+	info += '<span>' + aidsdate(image.date) + '</span>'
+
+	var item = $('<li class="shown"><a class="imglink" id="elem' + image.id + '" href="#"><img src="' + src + '"><p>' + info + '</p></a></li>')
+	return item
 }
 
 function clicker(elemid, i){
